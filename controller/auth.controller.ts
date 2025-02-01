@@ -30,6 +30,8 @@ interface IResponse extends Response {
 export const registerMember = asyncHandler(async (req: Request, res: Response) => {
     const { name, email, password, studentId, passingYear, department, residentialAddress, professionalAddress } = req.body;
     const { photo, receipt } = (req as unknown as IResponse).files;
+    
+    
 
     // Check if all fields are provided
     if (!(name && email && password && studentId && passingYear && department && residentialAddress && professionalAddress && photo && receipt)) {
